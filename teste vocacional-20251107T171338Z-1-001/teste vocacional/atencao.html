@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocare - Atenção</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="pagina-atencao">
+  <div class="login-container">
+    <div class="voltar" onclick="window.history.back()">&#8592;</div>
+    
+  <div class="conteudo-atencao">
+    <div class="caixa-atencao">
+      <div class="texto-atencao">
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="./unnamed-removebg-preview.png" alt="Logo Vocare" style="height: 60px; display: inline-block; vertical-align: middle;">
+          
+        </div>
+
+        <h2>ATENÇÃO</h2>
+        <p>
+          Para que o resultado seja coerente, responda às questões com atenção e sinceridade. A seguir,
+          selecione as opções das quais mais se identifica.
+        </p>
+        <p>
+          Lembre-se de que não há respostas certas ou erradas, apenas aquelas que mais refletem sua
+          opinião e seus sentimentos. Se em algum momento não souber como responder, escolha a opção
+          que melhor representa seu pensamento no momento.
+        </p>
+        <p>
+          <strong>Importante:</strong> Não se preocupe em tentar responder de forma que "agrade" alguém. O objetivo é
+          compreender suas preferências e interesses para ajudá-lo(a) a tomar decisões mais alinhadas com
+          sua personalidade.
+        </p>
+        <p>
+          Ao finalizar, você receberá uma análise personalizada, de acordo com as suas respostas. Seja
+          honesto(a) e aproveite o processo!
+        </p>
+
+        <!-- Checkbox dos Termos -->
+        <div class="termos-container">
+          <label class="checkbox-termos">
+            <input type="checkbox" id="aceitoTermos">
+            <span>Aceito os Termos de Política e Privacidade</span>
+          </label>
+        </div>
+
+        <div class="prosseguir">
+          <button class="btn-principal" id="btnComecar"onclick="irPara('questionario.html')" disabled>começar meu teste</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+  </footer>
+
+  <script>
+    // Controla o botão baseado no checkbox
+    const checkbox = document.getElementById('aceitoTermos');
+    const botao = document.getElementById('btnComecar');
+
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        botao.disabled = false;
+        botao.style.opacity = '1';
+        botao.style.cursor = 'pointer';
+      } else {
+        botao.disabled = true;
+        botao.style.opacity = '0.5';
+        botao.style.cursor = 'not-allowed';
+      }
+    });
+
+    // Quando clicar no botão (se habilitado)
+    botao.addEventListener('click', function() {
+      if (!this.disabled) {
+        window.location.href = 'questionario.html'; // Troque pelo link da próxima página
+      }
+    });
+  </script>
+
+  
+</body>
+</html>

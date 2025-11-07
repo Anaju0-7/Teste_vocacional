@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> - Teste Vocacional</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@swap400;600;700&display=" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* Cabeçalho */
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 20px;
+  }
+
+  .btn-voltar {
+    background: none;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    color: #333;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+
+  .btn-voltar:hover {
+    transform: scale(1.1);
+  }
+
+  .logo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+  }
+
+  .logo-header img {
+    height: 60px;
+  }
+
+  .logo-header span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  /* Container principal */
+  .container {
+    background: #DFF6FA;
+    border-radius: 25px;
+    padding: 50px 60px;
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 3px solid #DFF6FA;
+    position: relative;
+  }
+
+  .etapa {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #5BA6B8;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .pergunta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #f36f45;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+  }
+
+  .opcao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    transition: background 0.2s;
+    border-radius: 8px;
+  }
+
+  .opcao:hover {
+    background: rgba(171, 225, 236, 0.2);
+  }
+
+  .opcao input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #72A2AC;
+    flex-shrink: 0;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .btn {
+    background: #72A2AC;
+    color: #fff;
+    border: none;
+    padding: 16px 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: capitalize;
+  }
+
+  .btn:hover {
+    background: #72A2AC;
+    transform: scale(1.05);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Resultado */
+  #resultado {
+    text-align: center;
+  }
+
+  #resultado h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #f36f45;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  #resultado p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .header {
+      padding: 15px 20px;
+    }
+
+    .logo-header span {
+      font-size: 32px;
+    }
+
+    .logo-header img {
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      margin-left: 15px;
+    }
+
+    .container {
+      padding: 35px 30px;
+      width: 95%;
+    }
+
+    .etapa {
+      font-size: 18px;
+    }
+
+    .pergunta {
+      font-size: 16px;
+    }
+
+    .opcao {
+      font-size: 15px;
+    }
+
+    .btn {
+      padding: 14px 50px;
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <div class="header">
+    <button class="btn-voltar" onclick="window.history.back()">←</button>
+    <div class="logo-header">
+      <img src="vocaresaibamais.png" alt="Logo Vocare">
+      <span>Voce</span>
+    </div>
+  </div>
+
+  <!-- Container do Quiz -->
+  <div class="container">
+    <div id="quiz">
+      <p class="etapa" id="etapa">ETAPA 1/30</p>
+      <p class="pergunta" id="pergunta">
+        Quando você precisa escolher uma atividade para passar o tempo, você prefere:
+      </p>
+
+      <div class="opcoes-container" id="opcoes"></div>
+
+      <div class="btn-container">
+        <button class="btn" id="btnProximo">Continuar</button>
+      </div>
+    </div>
+
+<script>
+  const perguntas = [
+    {
+      pergunta: "Quando você precisa escolher uma atividade para passar o tempo, você prefere:",
+      opcoes: [
+        "Construir ou consertar algo com as mãos (R)",
+        "Pesquisar e entender como algo funciona (I)",
+        "Criar algo original ou artístico (A)",
+        "Ajudar ou ensinar alguém (S)",
+        "Liderar ou organizar uma equipe (E)",
+        "Seguir instruções ou rotinas detalhadas (C)"
+      ]
+    },
+    {
+      pergunta: "Quando aprende algo novo, você prefere:",
+      opcoes: [
+        "Explorar conceitos e ideias por conta própria (I)",
+        "Trabalhar com materiais ou equipamentos concretos (R)",
+        "Criar algo visual ou artístico (A)",
+        "Ajudar colegas a entender o que aprendeu (S)",
+        "Planejar como aplicar o conhecimento na prática (E)",
+        "Seguir instruções detalhadas passo a passo (C)"
+      ]
+    },
+    {
+      pergunta: "Quando trabalha em equipe, você geralmente:",
+      opcoes: [
+        "Observa dados e fatos antes de opinar (I)",
+        "Propõe ideias criativas e inovadoras (A)",
+        "Assume responsabilidades e lidera projetos (E)",
+        "Segue métodos já estabelecidos para cumprir tarefas (C)",
+        "Preocupa-se com o bem-estar de todos (S)",
+        "Gosta de colocar a mão na massa e executar atividades concretas (R)"
+      ]
+    },
+    {
+      pergunta: "Para se sentir realizado, você precisa:",
+      opcoes: [
+        "Criar algo original e único (A)",
+        "Observar resultados concretos do seu trabalho (R)",
+        "Compreender profundamente um tema ou fenômeno (I)",
+        "Apoiar e ajudar outras pessoas a progredir (S)",
+        "Influenciar decisões e liderar ações (E)",
+        "Organizar processos e manter tudo em ordem (C)"
+      ]
+    },
+    {
+      pergunta: "Quando enfrenta um desafio, você prefere:",
+      opcoes: [
+        "Experimentar diferentes soluções práticas (R)",
+        "Pesquisar e analisar alternativas antes de agir (I)",
+        "Pensar em abordagens criativas e inovadoras (A)",
+        "Conversar com outros para buscar consenso (S)",
+        "Tomar a iniciativa e liderar a ação (E)",
+        "Seguir procedimentos claros e seguros (C)"
+      ]
+    },
+    {
+      pergunta: "Para lidar com problemas inesperados, você prefere:",
+      opcoes: [
+        "Experimentar soluções práticas rapidamente (R)",
+        "Investigar e entender profundamente o problema (I)",
+        "Buscar soluções criativas e originais (A)",
+        "Conversar com pessoas envolvidas e buscar acordo (S)",
+        "Liderar e coordenar a ação (E)",
+        "Seguir métodos e procedimentos seguros (C)"
+      ]
+    },
+    {
+      pergunta: "Quando escolhe uma atividade, você valoriza mais:",
+      opcoes: [
+        "Concretude e utilidade prática (R)",
+        "Criatividade e originalidade (A)",
+        "Organização e rotina clara (C)",
+        "Compreensão e análise detalhada (I)",
+        "Relações humanas e colaboração (S)",
+        "Liderança e tomada de decisões (E)"
+      ]
+    },
+    {
+      pergunta: "Em seu tempo livre, você gosta de:",
+      opcoes: [
+        "Resolver desafios práticos ou mecânicos (R)",
+        "Ler e pesquisar sobre assuntos que despertam curiosidade (I)",
+        "Produzir obras artísticas ou musicais (A)",
+        "Participar de atividades comunitárias ou voluntariado (S)",
+        "Organizar eventos ou grupos de amigos (E)",
+        "Manter sua rotina estruturada e planejada (C)"
+      ]
+    },
+    {
+      pergunta: "Para lidar com problemas inesperados, você prefere:",
+      opcoes: [
+        "Experimentar soluções práticas rapidamente (R)",
+        "Investigar e entender profundamente o problema (I)",
+        "Buscar soluções criativas e originais (A)",
+        "Conversar com pessoas envolvidas e buscar acordo (S)",
+        "Liderar e coordenar a ação (E)",
+        "Seguir métodos e procedimentos seguros (C)"
+      ]
+    },
+    {
+      pergunta: "Em atividades sociais, você prefere:",
+      opcoes: [
+        "Lidar com aspectos concretos da situação (R)",
+        "Compreender e analisar informações sobre o grupo (I)",
+        "Propor ideias criativas para engajar todos (A)",
+        "Seguir normas ou instruções estabelecidas (C)",
+        "Organizar e coordenar ações do grupo (E)",
+        "Ajudar e apoiar os participantes (S)"
+      ]
+    },
+    {
+      pergunta: "Em um projeto novo, você gosta de:",
+      opcoes: [
+        "Trabalhar com ferramentas, máquinas ou equipamentos (R)",
+        "Estudar profundamente o problema e suas causas (I)",
+        "Desenvolver ideias originais e criativas (A)",
+        "Apoiar e orientar colegas de forma colaborativa (S)",
+        "Planejar estratégias e coordenar ações (E)",
+        "Criar sistemas e métodos organizados (C)"
+      ]
+    },
+    {
+      pergunta: "Para tomar decisões importantes, você prefere:",
+      opcoes: [
+        "Avaliar dados e informações detalhadamente (I)",
+        "Confiar em sua experiência prática (R)",
+        "Considerar a criatividade das soluções possíveis (A)",
+        "Levar em conta o impacto sobre as pessoas (S)",
+        "Assumir a responsabilidade e decidir com confiança (E)",
+        "Seguir regras e procedimentos já testados (C)"
+      ]
+    },
+    {
+      pergunta: "Em atividades de lazer, você prefere:",
+      opcoes: [
+        "Construir ou consertar objetos e equipamentos (R)",
+        "Explorar assuntos que despertam curiosidade intelectual (I)",
+        "Criar artes, música ou escrita (A)",
+        "Participar de atividades sociais ou ajudar outros (S)",
+        "Planejar e organizar eventos ou encontros (E)",
+        "Manter uma rotina estruturada (C)"
+      ]
+    },
+    {
+      pergunta: "Quando precisa organizar informações, você:",
+      opcoes: [
+        "Cria sistemas e métodos para facilitar o trabalho (C)",
+        "Analisa dados e procura padrões (I)",
+        "Gosta de visualizar de forma criativa ou artística (A)",
+        "Compartilha e ensina o que aprendeu (S)",
+        "Assume a responsabilidade por decisões importantes (E)",
+        "Lida com ferramentas e recursos concretos para organizar (R)"
+      ]
+    },
+    {
+      pergunta: "Quando participa de uma atividade em grupo, você:",
+      opcoes: [
+        "Assume liderança e organiza tarefas (E)",
+        "Busca ajudar e apoiar os colegas (S)",
+        "Aplica conhecimento prático e concreto (R)",
+        "Cria ideias originais e inovadoras (A)",
+        "Analisa dados e informações antes de decidir (I)",
+        "Mantém sistemas e processos estruturados (C)"
+      ]
+    },
+    {
+      pergunta: "Para alcançar objetivos, você prefere:",
+      opcoes: [
+        "Planejar e organizar etapas detalhadamente (C)",
+        "Experimentar e colocar ideias em prática (R)",
+        "Desenvolver soluções criativas e novas (A)",
+        "Coordenar e motivar outras pessoas (E)",
+        "Compreender profundamente os fatores envolvidos (I)",
+        "Ajudar e apoiar quem precisa (S)"
+      ]
+    },
+    {
+      pergunta: "Em um ambiente de trabalho ideal, você:",
+      opcoes: [
+        "Trabalha com máquinas, ferramentas ou objetos (R)" ,
+        "Pesquisa, investiga e analisa informações (I)" ,
+        "Cria conteúdos ou soluções originais (A)",
+        "Ajuda pessoas e se envolve socialmente (S)",
+        "Lidera equipes e projetos (E)",
+        "Mantém processos e documentos organizados (C)"
+      ]
+    },
+    {
+      pergunta: "Quando precisa aprender algo novo rapidamente, você prefere:",
+      opcoes: [
+        "Aplicar imediatamente na prática (R)",
+        "Estudar detalhadamente o tema (I)",
+        "Experimentar de forma criativa e inovadora (A)",
+        "Contar com ajuda ou colaboração de outros (S)",
+        "Tomar decisões e orientar ações (E)",
+        "Seguir passo a passo instruções e procedimentos (C)"
+      ]
+    },
+    {
+      pergunta: "Para se sentir motivado no trabalho, você precisa:",
+      opcoes: [
+        "Lidar com atividades práticas e concretas (R)",
+        "Descobrir e analisar novas informações (I)",
+        "Ter liberdade para criar algo novo (A)",
+        "Sentir que ajuda e apoia os outros (S)",
+        "Assumir responsabilidades e liderança (E)",
+        "Trabalhar em ambientes estruturados e organizados (C)"
+      ]
+    },
+    {
+      pergunta: "Quando enfrenta uma tarefa desafiadora, você prefere:",
+      opcoes: [
+        "Usar ferramentas ou métodos práticos (R)",
+        "Pesquisar e entender detalhadamente antes de agir (I)",
+        "Encontrar soluções criativas e originais (A)",
+        "Conversar com outros para buscar ajuda ou ideias (S)",
+        "Coordenar e liderar o processo (E)",
+        "Seguir processos já conhecidos e confiáveis (C)"
+      ]
+    },
+    {
+      pergunta: "Em projetos criativos, você gosta de:",
+      opcoes: [
+        "Aplicar ideias de forma prática (R)",
+        "Pesquisar profundamente antes de criar (I)",
+        "Expressar originalidade e imaginação (A)",
+        "Trabalhar em colaboração com outras pessoas (S)",
+        "Liderar a execução e implementação (E)",
+        "Estruturar etapas e organizar recursos (C)"
+      ]
+    },
+    {
+      pergunta: "Quando organiza suas atividades, você prefere:",
+      opcoes: [
+        "Seguir uma rotina clara e estruturada (C)",
+        "Ter liberdade para criar soluções novas (A)",
+        "Planejar com base em fatos e dados (I)",
+        "Coordenar e ajudar outros a completar tarefas (S)",
+        "Aplicar suas habilidades práticas (R)",
+        "Assumir responsabilidades e liderar (E)"
+      ]
+    },
+    {
+      pergunta: "Para tomar decisões rápidas, você tende a:",
+      opcoes: [
+        "Confiar na experiência prática (R)",
+        "Analisar rapidamente os dados disponíveis (I)",
+        "Buscar soluções originais e criativas (A)",
+        "Consultar outras pessoas antes de agir (S)",
+        "Assumir a liderança e decidir (E)",
+        "Seguir padrões ou procedimentos conhecidos (C)"
+      ]
+    },
+    {
+      pergunta: "Quando busca crescimento profissional, você prioriza:",
+      opcoes: [
+        "Experiência prática e execução concreta (R)",
+        "Conhecimento e investigação aprofundada (I)",
+        "Criatividade e inovação (A)",
+        "Conexões humanas e colaboração (S)",
+        "Liderança e responsabilidade (E)",
+        "Estrutura, planejamento e organização (C)"
+      ]
+    },
+    {
+      pergunta: "Para lidar com tarefas repetitivas, você prefere:",
+      opcoes: [
+        "Aplicar métodos práticos e eficientes (R)",
+        "Entender a lógica por trás das tarefas (I)",
+        "Buscar formas de torná-las mais criativas (A)",
+        "Trabalhar com outras pessoas para facilitar (S)",
+        "Coordenar o trabalho e liderar resultados (E)",
+        "Manter tudo organizado e em ordem (C)"
+      ]
+    },
+    {
+      pergunta: "Em situações novas, você gosta de:",
+      opcoes: [
+        "Testar soluções práticas e imediatas (R)",
+        "Pesquisar e analisar antes de agir (I)",
+        "Pensar de forma inovadora e original (A)",
+        "Conversar e colaborar com outras pessoas (S)",
+        "Assumir responsabilidade e liderança (E)",
+        "Seguir regras ou métodos seguros (C)"
+      ]
+    },
+    {
+      pergunta: "Para se sentir satisfeito no trabalho, você precisa:",
+      opcoes: [
+        "Lidar com atividades concretas e úteis (R)",
+        "Aprender e entender coisas novas constantemente (I)",
+        "Criar e inovar em suas tarefas (A)",
+        "Ajudar e apoiar os outros (S)",
+        "Assumir liderança e influenciar resultados (E)",
+        "Trabalhar com ordem, estrutura e rotina (C)"
+      ]
+    },
+    {
+      pergunta: "Quando precisa resolver um problema novo, você tende a:",
+      opcoes: [
+        "Procurar uma forma prática de testar logo a solução (R)",
+        "Investigar as causas e entender profundamente (I)",
+        "Pensar em maneiras criativas e diferentes de resolver (A)",
+        "Pedir opiniões e colaborar com outras pessoas (S)",
+        "Tomar a frente e organizar o que precisa ser feito (E)",
+        "Seguir um método que já deu certo antes (C)"
+      ]
+    },
+    {
+      pergunta: "Quando participa de algo importante, você costuma:",
+      opcoes: [
+        "Agir de forma prática e objetiva (R)",
+        "Observar e analisar antes de tomar decisões (I)",
+        "Acrescentar ideias novas e criativas (A)",
+        "Cuidar para que todos se sintam bem e incluídos (S)",
+        "Liderar e direcionar o grupo (E)",
+        "Garantir que tudo esteja organizado e dentro das regras (C)"
+      ]
+    },
+    {
+      pergunta: "Quando pensa no seu futuro profissional, você quer:",
+      opcoes: [
+        "Trabalhar com algo prático e concreto (R)",
+        "Estudar e compreender temas em profundidade (I)",
+        "Criar e inovar no que faz (A)",
+        "Ajudar e gerar impacto positivo em outras pessoas (S)",
+        "Liderar projetos e tomar decisões importantes (E)",
+        "Ter estabilidade, rotina e organização (C)"
+      ]
+    }
+  ];
+  
+  let etapaAtual = 0;
+
+  const etapaEl = document.getElementById('etapa');
+  const perguntaEl = document.getElementById('pergunta');
+  const opcoesEl = document.getElementById('opcoes');
+  const btnProximo = document.getElementById('btnProximo');
+  const resultadoEl = document.getElementById('resultado');
+  const quizEl = document.getElementById('quiz');
+
+  function carregarPergunta() {
+    const q = perguntas[etapaAtual];
+    etapaEl.textContent = `ETAPA ${etapaAtual + 1}/${perguntas.length}`;
+    perguntaEl.textContent = q.pergunta;
+
+    opcoesEl.innerHTML = "";
+    q.opcoes.forEach((op, i) => {
+      const label = document.createElement("label");
+      label.classList.add("opcao");
+      label.innerHTML = `<input type="radio" name="opcao" value="${i}"> ${op}`;
+      opcoesEl.appendChild(label);
+    });
+  }
+
+  btnProximo.addEventListener("click", () => {
+    const selecionada = document.querySelector('input[name="opcao"]:checked');
+    if (!selecionada) {
+      alert("Por favor, selecione uma resposta antes de continuar.");
+      return;
+    }
+
+    etapaAtual++;
+      if (etapaAtual < perguntas.length) {
+        carregarPergunta();
+      } else {
+  // vai pra página de carregamento
+      window.location.href = "carregamento.html";
+      }
+  });
+
+  function reiniciar() {
+    etapaAtual = 0;
+    quizEl.classList.add("hidden");
+resultadoEl.classList.remove("hidden");
+    carregarPergunta();
+  }
+
+  carregarPergunta();
+</script>
+</body>
+</html>

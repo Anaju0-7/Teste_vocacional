@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocare - Processando</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Cabeçalho - LOGO CENTRALIZADA E PRÓXIMA */
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-header img {
+      height: 80px;
+    }
+
+    .logo-header span {
+      display: none;
+    }
+
+    /* Container principal */
+    .container {
+      background: #DFF6FA;
+      border-radius: 30px;
+      padding: 80px 100px;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .titulo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 56px;
+      font-weight: 900;
+      color: #78979e;
+      margin-bottom: 50px;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Loading Spinner - Circular simples */
+    .loader-container {
+      margin: 60px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    /* Círculo de fundo */
+    .loader::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 6px solid #537075;
+      border-radius: 50%;
+    }
+
+    /* Círculo animado */
+    .loader::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 6px solid #3c4e52;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Botão */
+    .btn-container {
+      margin-top: 60px;
+    }
+
+    .btn {
+      background: #EF6219;
+      color: #fff;
+      border: none;
+      padding: 18px 80px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      background: #5C8A95;
+      transform: scale(1.05);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .header {
+        margin-bottom: 30px;
+      }
+
+      .logo-header span {
+        font-size: 32px;
+      }
+
+      .logo-header img {
+        height: 45px;
+      }
+
+      .container {
+        padding: 50px 40px;
+      }
+
+      .titulo {
+        font-size: 38px;
+        margin-bottom: 40px;
+      }
+
+      .loader {
+        width: 60px;
+        height: 60px;
+      }
+
+      .loader::before,
+      .loader::after {
+        border-width: 5px;
+      }
+
+      .btn {
+        padding: 16px 60px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        margin-bottom: 20px;
+      }
+
+      .titulo {
+        font-size: 32px;
+      }
+
+      .container {
+        padding: 40px 30px;
+      }
+
+      .logo-header span {
+        font-size: 28px;
+      }
+
+      .logo-header img {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho - Logo centralizada e próxima -->
+  <div class="header">
+    <div class="logo-header">
+      <img src="unnamed-removebg-preview.png" alt="Logo Vocare">
+      <span>Vocare</span>
+    </div>
+  </div>
+
+  <!-- Container principal -->
+  <div class="container">
+    <h1 class="titulo">PROCESSANDO<br>RESPOSTAS...</h1>
+    
+    <div class="loader-container">
+      <div class="loader"></div>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" onclick="window.location.href='resultado.html'">Ver meu resultado</button>
+    </div>
+  </div>
+
+  <script>
+    // Redirecionar automaticamente após 3 segundos (opcional)
+    // setTimeout(() => {
+    //   window.location.href = 'resultado.html';
+    // }, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocare - Resultado</title>
+
+  <!-- Fontes Afacad e Lilita One -->
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Afacad', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    /* Barra superior */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      background-color: #CFEAF3;
+      padding: 16px 30px;
+    }
+
+    .back-arrow {
+      font-size: 28px;
+      margin-right: 12px;
+      color: #555;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Logo */
+    .logo {
+      height: 48px;
+      width: auto;
+    }
+
+    /* Container principal */
+    .resultado {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 1200px;
+    }
+
+    .resultado h2 {
+      color: #6CA9B8;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 40px;
+    }
+
+    .titulo-principal {
+      font-family: 'Lilita One', sans-serif;
+      color: #58C8E3;
+      font-size: 66px;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    /* Caixa azul */
+    .caixa-azul {
+      background-color: #BCECF1;
+      padding: 60px 90px;
+      padding-bottom: 10px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .caixa-azul p {
+      width: 1000px;
+      font-size: 24px;
+      line-height: 1.8;
+      color: #333;
+      text-align: center;
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Botão de profissões */
+    .btn-profissoes {
+      font-family: 'Lilita One', sans-serif;
+      background-color: #72A2AC;
+      color: white;
+      border: none;
+      padding: 16px 60px;
+      border-radius: 35px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      cursor: default;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    /* Listas */
+    .lista-profissoes {
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+      text-align: left;
+    }
+
+    .lista-profissoes ul {
+      list-style-type: disc;
+      color: #333;
+      padding-left: 25px;
+    }
+
+    .lista-profissoes li {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    /* Ilustrações */
+    .ilustracoes {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .ilustracoes img {
+      height: auto;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .titulo-principal {
+        font-size: 36px;
+      }
+
+      .caixa-azul {
+        width: 95%;
+        padding: 40px 25px;
+      }
+
+      .caixa-azul p {
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .lista-profissoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .ilustracoes {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .ilustracoes img {
+        width: 100px;
+      }
+
+      .logo {
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <span class="back-arrow">←</span>
+      <img src="vocaresaibamais.png" alt="Logo Vocare" class="logo">
+    </div>
+  </header>
+
+  <main>
+    <section class="resultado">
+      <h2>SEU RESULTADO</h2>
+      <h1 class="titulo-principal">ARTÍSTICA – ACREDITAR</h1>
+
+      <div class="caixa-azul">
+        <p>
+          Você gosta de fazer atividades criativas, como arte, teatro, artesanato, dança, música ou escrita criativa, 
+          e evita atividades muito ordenadas ou repetitivas. 
+          Você tem boas habilidades artísticas em escrita criativa, teatro, artesanato, música ou artes visuais. 
+          Valoriza as artes criativas, como teatro, música, arte e obras de escritores criativos. 
+          Você se vê como alguém expressivo, original e independente.
+        </p>
+
+        <button class="btn-profissoes">PROFISSÕES</button>
+
+        <div class="lista-profissoes">
+          <ul>
+            <li>Designer gráfico</li>
+            <li>Pintor</li>
+            <li>Ilustrador</li>
+            <li>Fotógrafo</li>
+          </ul>
+          <ul>
+            <li>Músico</li>
+            <li>Ator/atriz</li>
+            <li>Dançarino</li>
+            <li>Cantor</li>
+          </ul>
+          <ul>
+            <li>Escritor/autor</li>
+            <li>Roteirista</li>
+            <li>Jornalista cultural</li>
+            <li>Poeta</li>
+          </ul>
+        </div>
+
+        <div class="ilustracoes">
+          <img src="artistico.png" alt="Profissões Artísticas">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
