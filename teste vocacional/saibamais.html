@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saiba Mais - Vocare</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
+  <style>
+    /* ====== FUNDO DA PÁGINA ====== */
+    .pagina-saiba-mais {
+      background-color: #DFF6FA; /* azul clarinho */
+      min-height: 100vh;
+      padding: 40px; /* maior padding */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ====== HEADER COM SETA ====== */
+    .saiba-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 30px 0;
+    }
+
+    /* seta permanece do jeito que está */
+    .icone-voltar {
+      width: 40px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    /* ====== CONTEÚDO PRINCIPAL ====== */
+    .saiba-mais {
+      width: 90%;
+      max-width: 1400px; /* maior largura */
+      border-radius: 25px;
+      padding: 50px 40px; /* maior espaço interno */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      /* background removido */
+    }
+
+    .caixa-saiba p {
+      font-size: 1.4rem; /* texto maior */
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .caixa-saiba p b {
+      font-weight: bold;
+    }
+
+    /* ====== RODAPÉ ====== */
+    .rodape-saiba {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .rodape-saiba p {
+      font-size: 1.2rem; /* maior */
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .logos-saiba {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* maior espaçamento */
+      flex-wrap: wrap;
+    }
+
+    .logo-vo, .bandeira {
+      width: 180px; /* imagens maiores */
+      height: auto;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .saiba-mais {
+        padding: 30px 20px;
+      }
+
+      .caixa-saiba p {
+        font-size: 1.2rem;
+      }
+
+      .rodape-saiba p {
+        font-size: 1rem;
+      }
+
+      .logo-vo, .bandeira {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina-saiba-mais">
+    <!-- HEADER COM SETA -->
+    <header class="saiba-header">
+      <img src="seta.png" alt="Voltar" class="icone-voltar" onclick="irPara('index.html')">
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="saiba-mais">
+      <div class="caixa-saiba">
+        <p><b>A escolha profissional é um momento crítico,</b> e a ausência de orientação adequada pode causar insegurança, desmotivação e evasão acadêmica.</p>
+        <p><b>Os testes vocacionais</b> são ferramentas de autoconhecimento que ajudam a identificar habilidades, interesses e caminhos profissionais. Este trabalho propõe o desenvolvimento de um site de avaliação vocacional para apoiar estudantes na escolha de carreira.</p>
+      </div>
+
+      <div class="rodape-saiba">
+        <p>PROJETO SOCIAL DESTINADO AOS ESTUDANTES DO ESTADO DE SÃO PAULO</p>
+        <div class="logos-saiba">
+          <img src="vocaresaibamais.png" alt="Vocare Logo" class="logo-vo">
+          <img src="bandeirasp.png" alt="Bandeira de SP" class="bandeira">
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

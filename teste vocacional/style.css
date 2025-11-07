@@ -1,0 +1,675 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ====== TOPO ====== */
+.topo {
+  background: #ABE1EC;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: start;
+
+  gap: 30px;
+  align-items: center;
+}
+
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.texto-logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #f36f45;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ====== BANNER ====== */
+.banner {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.faixa-laranja img {
+  width: 85%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* ====== TÍTULO ====== */
+.titulo {
+  text-align: center;
+  margin: 40px 0 30px 0;
+  font-size: 36px;
+  font-weight: bold;
+  color: #f36f45;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ====== CAIXA TESTE ====== */
+.caixa-teste {
+  background: #fdf7f2;
+  border-radius: 20px;
+  padding: 50px;
+  margin: 30px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.subtitulo-azul {
+  color: #ABE1EC;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.conteudo-teste {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.passos {
+  flex: 1;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.passos b {
+  font-weight: 800;
+}
+
+.icone-teste img {
+  width: 350px;
+  height: auto;
+}
+
+/* ====== BOTÃO TESTE ====== */
+.fazer-teste {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.btn-principal {
+  background: #f36f45;
+  color: white;
+  border: none;
+  padding: 22px 65px;
+  border-radius: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-principal:hover {
+  background: #d9552d;
+  transform: scale(1.05);
+}
+
+/* ====== AVISO ====== */
+.aviso {
+  background: #eef8fb;
+  border-radius: 24px;
+  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.img-aviso {
+  width: 280px;
+  height: auto;
+}
+
+.texto-aviso b:first-of-type {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #000;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.texto-aviso b {
+  font-weight: bold;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ====== DESCRIÇÃO ====== */
+.caixa-descricao {
+  background: #eef8fb;
+  border-radius: 24px;
+  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.texto-descricao {
+  flex: 1 1 60%;
+}
+
+.caixa-descricao .texto-descricao b:first-of-type {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #000;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.caixa-descricao .texto-descricao p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.imagem-descricao {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.imagem-descricao img {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+/* ====== SEÇÃO SAIBA MAIS ====== */
+.saiba-mais {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin: 50px auto;
+}
+
+.caixa-saiba {
+  background: #fdf2ec;
+  border-radius: 25px;
+  padding: 35px 45px;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.caixa-saiba p {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.caixa-saiba b {
+  font-weight: 700;
+}
+
+.rodape-saiba {
+  text-align: center;
+}
+
+.rodape-saiba p {
+  background: #f36f45;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.logos-saiba {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo-vo {
+  width: 100px;
+  height: auto;
+}
+
+.bandeira {
+  width: 80px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ====== BOTÃO ESPECIALISTAS ====== */
+.especialistas {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.btn-laranja {
+  background: #f36f45;
+  color: white;
+  padding: 22px 65px;
+  border-radius: 50px;
+  border: none;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.btn-laranja:hover {
+  background: #d9552d;
+}
+
+/* ====== PÁGINA ATENÇÃO ====== */
+.pagina-atencao {
+  background: #DFF6FA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* CONTEÚDO */
+.conteudo-atencao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  flex: 1;
+}
+
+.caixa-atencao {
+  background: #ffffff;
+  border-radius: 35px;
+  padding: 60px 80px;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* IMAGEM */
+.img-atencao {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* TEXTO */
+.texto-atencao {
+  flex: 1;
+}
+
+.texto-atencao h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  color: #f36f45;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.texto-atencao p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.texto-atencao .destaque {
+  font-weight: 700;
+  color: #f36f45;
+  font-size: 20px;
+}
+
+/* BOTÃO */
+.prosseguir {
+  margin-top: 60px;
+}
+
+/* RODAPÉ */
+.rodape {
+  text-align: center;
+  padding: 20px;
+  background: #ABE1EC;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* ==================== PÁGINA SAIBA MAIS - ESPECIALISTAS ==================== */
+
+/* TOPO DA PÁGINA SAIBA MAIS */
+.topo-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nome-site {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #f36f45;
+}
+
+/* Seta como imagem no canto direito */
+.seta-direita {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.img-seta {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.seta-direita:hover {
+  transform: scale(1.1);
+}
+
+/* BLOCOS GERAIS */
+.bloco {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* BLOCO 1 - TEXTO CONSULTA */
+.texto-consulta {
+  background: #fde8dd;
+  text-align: center;
+  padding: 50px 60px;
+}
+
+.texto-consulta p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+.img-consulta {
+  width: 380px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* BLOCO 2 - PSICÓLOGA */
+.bloco-psicologa {
+  background: #fde8dd;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+.foto-psicologa {
+  flex-shrink: 0;
+}
+
+.foto-psicologa img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.texto-psicologa {
+  flex: 1;
+}
+
+.texto-psicologa p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.assinatura {
+  font-weight: 700;
+  font-size: 17px !important;
+  margin-top: 15px;
+}
+
+/* BLOCO 3 - HOLLAND */
+.bloco-holland {
+  background: #e3f5f7;
+  padding: 50px 60px;
+}
+
+.bloco-holland h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff8c42;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.conteudo-holland {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.texto-holland {
+  flex: 1;
+}
+
+.texto-holland p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.texto-holland a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.img-holland {
+  flex-shrink: 0;
+}
+
+.img-holland img {
+  width: 300px;
+  height: auto;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 900px) {
+  .conteudo-teste {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .icone-teste img {
+    margin-top: 20px;
+    width: 200px;
+  }
+
+  .titulo {
+    font-size: 28px;
+  }
+
+  .passos {
+    font-size: 18px;
+  }
+
+  .subtitulo-azul {
+    font-size: 22px;
+  }
+
+  .caixa-descricao {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagem-descricao img {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  .caixa-saiba {
+    padding: 25px;
+  }
+
+  .caixa-saiba p {
+    font-size: 16px;
+  }
+
+  .logo-vo {
+    width: 80px;
+  }
+
+  .bandeira {
+    width: 65px;
+  }
+
+  /* Atenção Responsivo */
+  .caixa-atencao {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 25px;
+  }
+
+  .img-atencao {
+    width: 200px;
+  }
+
+  .texto-atencao h2 {
+    font-size: 32px;
+  }
+
+  .texto-atencao p {
+    font-size: 18px;
+  }
+
+  .btn-principal {
+    font-size: 20px;
+    padding: 18px 50px;
+  }
+
+  /* Saiba Mais Responsivo */
+  .topo {
+    padding: 25px 30px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .nome-site {
+    font-size: 28px;
+  }
+
+  .img-seta {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bloco {
+    max-width: 95%;
+    padding: 35px;
+  }
+
+  .bloco-psicologa {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .foto-psicologa img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .texto-consulta p {
+    font-size: 18px;
+  }
+
+  .img-consulta {
+    width: 280px;
+  }
+
+  .conteudo-holland {
+    flex-direction: column;
+  }
+
+  .img-holland img {
+    width: 240px;
+  }
+
+  .voltar {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .voltar:hover {
+      transform: scale(1.2);
+    }
+
+}
